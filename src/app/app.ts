@@ -10,7 +10,11 @@ import { Transacao } from './modelos/transacao';
   styleUrl: './app.css'
 })
 export class App {
+  transacoes = signal<Transacao[]>([]);
+
   processarTransacao(transacao: Transacao) {
-    console.log("Transação processada:", transacao);
+    this.transacoes.update(transacoesAtuais => [transacao, ...transacoesAtuais]);
+
+    console.log(this.transacoes());
   }
 }
