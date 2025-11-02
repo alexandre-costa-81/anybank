@@ -6,7 +6,7 @@
   justify-content: space-between;
 }
 
-/* @media screen and (max-width: 71rem) {
+@media screen and (max-width: 71rem) {
   .banner {
     padding: 3rem 1rem;
 
@@ -21,4 +21,4 @@
   .conta {
     width: 70%;
   }
-} */
+}
