@@ -1,7 +1,7 @@
 import { Component, computed, signal } from '@angular/core';
 import { Banner } from "./banner/banner";
 import { FormNovaTransacao } from "./form-nova-transacao/form-nova-transacao";
-import { Transacao } from './modelos/transacao';
+import { TipoTransacao, Transacao } from './modelos/transacao';
 
 @Component({
   selector: 'app-root',
@@ -14,9 +14,9 @@ export class App {
   saldo = computed(() => {
     return this.transacoes().reduce((total, transacao) => {
       switch (transacao.tipo) {
-        case "deposito":
+        case TipoTransacao.DEPOSITO:
           return total + transacao.valor;
-        case "saque":
+        case TipoTransacao.SAQUE:
           return total - transacao.valor;
         default:
           throw new Error("Tipo de transação inválido");
