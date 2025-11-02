@@ -4,5 +4,5 @@
     <app-form-nova-transacao (transacaoCriada)="processarTransacao($event)" />
   </div>
 
-  <app-extrato class="extrato" />
+  <app-extrato [transacoes]="$any(transacoes())" class="extrato" />
 </div>
