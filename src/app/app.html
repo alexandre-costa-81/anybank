@@ -2,5 +2,6 @@
   <div class="banner-form-wrapper">
     <app-banner />
     <app-form-nova-transacao (transacaoCriada)="processarTransacao($event)" />
+    {{ saldo() | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
   </div>
 </div>
